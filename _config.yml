@@ -39,7 +39,7 @@ pygments: false # default python pygments have been replaced by pygments.rb
 paginate: 4          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
 recent_posts: 8       # Posts in the sidebar Recent Posts section
-excerpt_link: "Read on &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
+excerpt_link: "Continuar lendo &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
 
 titlecase: false # Converts page and post titles to titlecase
 
@@ -59,9 +59,9 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 
 # Github repositories
 github_user: wolcanus
-github_repo_count: 0
+github_repo_count: 3
 github_show_profile_link: true
-github_skip_forks: true
+github_skip_forks: false
 
 # Twitter
 twitter_user: wolcanus
@@ -90,7 +90,7 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name: wolcanus
-disqus_show_comment_count: true
+disqus_show_comment_count: false
 
 # Google Analytics
 google_analytics_tracking_id: 'UA-37654492-1'
