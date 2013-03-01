@@ -10,7 +10,7 @@ Seguindo a dica do [Lucas Catón](http://blog.lucascaton.com.br/): algumas vezes
 
 Mas já alteramos seu conteúdo =/
 
-Ao invés de sair do Vim e abrir o arquivo como sudo/su -u, podemos executar:
+Ao invés de sair do Vim e abrir o arquivo como sudo/sudo -u, podemos executar:
 
 ``:w !sudo tee %``
 
