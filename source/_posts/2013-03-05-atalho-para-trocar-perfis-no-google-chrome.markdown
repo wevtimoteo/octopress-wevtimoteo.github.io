@@ -6,7 +6,7 @@ comments: true
 categories: macos chrome
 ---
 
-Todos os dias quando chego na [Baby](http://www.baby.com.br), abro o Google Chrome uso os perfis para trocar entre minha Google Account e a do trabalho. No entanto, ficar clicando é um pouco chato e todos sabemos disso.
+Todos os dias quando chego na [Baby](http://www.baby.com.br), abro o Google Chrome e uso os perfis para trocar entre minha Google Account e a do trabalho. No entanto, ficar clicando é um pouco chato e todos sabemos disso.
 
 Saí em busca de um atalho para tal:
 
