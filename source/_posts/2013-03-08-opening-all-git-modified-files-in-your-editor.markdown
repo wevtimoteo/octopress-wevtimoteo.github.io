@@ -3,7 +3,7 @@ layout: post
 title: "Abrindo arquivos alterados no Git com seu $EDITOR"
 date: 2013-03-08 15:13
 comments: true
-categories: vim, macos, bash
+categories: vim macos bash
 ---
 
 Hoje cheguei no projeto que estou trabalhando na [Baby](http://www.baby.com.br) e um simples:
