@@ -3,7 +3,7 @@ layout: post
 title: "O que é Teste de Regressão?"
 date: 2013-03-11 10:47
 comments: true
-categories: software development
+categories: development testing software regression
 ---
 
 Há um tempo já me pego lendo e ouvindo esse termo e nunca tinha entendido exatamente quais eram os momentos que eu deveria fazê-lo, então aproveitei para fazer um review completo sobre 'O que é Teste de Regressão?'.
