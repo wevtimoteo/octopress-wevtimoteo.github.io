@@ -70,7 +70,7 @@ O Jesse aproveitou para dar [umas dicas de usar o **RI** ao invés do **Rdoc**](
 
 ### Documentação não conta toda a história
 
-Essa parte o Jesse deu um exemplo bem bacana que eu vou simplesmente citar aqui:
+Nessa parte, o Jesse deu um exemplo bem bacana que eu vou simplesmente citar aqui:
 
 > ActiveRecord is a great example of this. When I'm trying to figure out what touch or reload or some other ActiveRecord::Base method does, I could look at the documentation. It would tell me how the method is intended to be used, what parameters it takes, and what it returns.
 >
@@ -80,7 +80,7 @@ Essa parte o Jesse deu um exemplo bem bacana que eu vou simplesmente citar aqui:
 
 ### Testes são as melhores documentações
 
-Como a comunidade Ruby ama testes, nada melhor do que olhar os testes para entender como usar determinado método ou até mesmo um API.
+Como a comunidade Ruby ama testes, nada melhor do que olhar os testes para entender como usar determinado método ou até mesmo uma API.
 
 ### O melhor motivo: você aprende coisas novas
 
