@@ -38,7 +38,7 @@ Combinando o `bundle open` com um ack/grep ou até [The Silver Searcher](https:/
 
 qwandry é uma gem que permite você abrir o código fonte de qualquer coisa da standard lib do Ruby.
 
-Para instalar: ``gem install qwandry`` e para usar ``qw nome_da_classe_na_standarb_lib``. Isso também abrirá o código fonte no seu $EDITOR.
+Para instalar: ``gem install qwandry`` e para usar ``qw nome_da_classe_na_standard_lib``. Isso também abrirá o código fonte no seu $EDITOR.
 
 Por exemplo, tenho dúvidas de como renderizar um arquivo ERB, qual método devo utilizar? Basta usar:
 
