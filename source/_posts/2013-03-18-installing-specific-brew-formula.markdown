@@ -46,7 +46,7 @@ E use o próprio comando do output do ``brew versions phantomjs``:
 
 ``git checkout d37d922 /usr/local/Library/Formula/phantomjs.rb``
 
-Isso fará com que a fórmula do [PhantomJS]() volte para versão do SHA utilizado.
+Isso fará com que a fórmula do [PhantomJS](http://phantomjs.org/) volte para versão do SHA utilizado.
 
 Agora use:
 
