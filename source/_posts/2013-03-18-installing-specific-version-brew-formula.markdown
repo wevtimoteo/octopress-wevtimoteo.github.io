@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Instalando uma fórmula específica no Homebrew"
+title: "Instalando uma versão específica de uma fórmula no Homebrew"
 date: 2013-03-18 17:51
 comments: true
 categories: brew macosx
