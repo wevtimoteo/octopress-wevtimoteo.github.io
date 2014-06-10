@@ -2,8 +2,8 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://wolcanus.github.com
-title: wolcanus
+url: http://wevtimoteo.github.io
+title: wevtimoteo
 subtitle: Software Developer adventure notes
 author: Weverton do Couto Timoteo
 simple_search: http://google.com/search
@@ -19,7 +19,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email: me@wolcan.us
+email: weverton.ct@gmail.com
 
 # ----------------------- #
 #    Jekyll & Plugins     #
