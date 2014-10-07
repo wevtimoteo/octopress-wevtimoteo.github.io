@@ -84,7 +84,7 @@ Como a comunidade Ruby ama testes, nada melhor do que olhar os testes para enten
 
 ### O melhor motivo: você aprende coisas novas
 
-Outras pessoas pensam de outra forma, têm outro estilo, outros approaches que nós não temos. Lendo o código dessas pessoas irá inspirar você a ter uma nova ideia.
+Outras pessoas pensam de outra forma, têm outro estilo de código e approaches diferentes dos nossos. Lendo o código dessas pessoas irá inspirar você a ter uma nova ideia.
 
 
 ## E se tudo falhar?
