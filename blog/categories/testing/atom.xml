@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: testing | wevtimoteo]]></title>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/blog/categories/testing/atom.xml" rel="self"/>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/"/>
+  <updated>2014-10-07T00:26:56-03:00</updated>
+  <id>http://wevtimoteo.github.com/wevtimoteo/</id>
+  <author>
+    <name><![CDATA[Weverton do Couto Timoteo]]></name>
+    <email><![CDATA[weverton.ct@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[O que é Teste de Regressão?]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/11/what-is-regression-testing/"/>
+    <updated>2013-03-11T10:47:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/11/what-is-regression-testing</id>
+    <content type="html"><![CDATA[<p>Há um tempo já me pego lendo e ouvindo esse termo e nunca tinha entendido exatamente quais eram os momentos que eu deveria fazê-lo, então aproveitei para fazer um review completo sobre 'O que é Teste de Regressão?'.</p>
+
+<h3>Qual o objetivo do teste de software?</h3>
+
+<blockquote><p>Identificar suas falhas para que a correção seja feita antes da entrega do produto ao usuário final.</p></blockquote>
+
+<h3>Como um teste de regressão surge?</h3>
+
+<blockquote><p>Um componente novo ou modificado pode falhar quando usado com componentes inalterados, causando defeito
+nos componentes inalterados pela geração de efeitos colaterais ou pelas características de interação.</p></blockquote>
+
+<p>Quando isso ocorre, diz-se que o sisteme sobre testes regrediu, por isso esses testes são chamados de testes de regressão.</p>
+
+<p>Em poucas palavras, você quebrou o teste de uma outra funcionalidade por conta dessa nova <em>feature</em> ou <em>correção de bug</em>.</p>
+
+<h3>Quando um teste de regressão é utilizado?</h3>
+
+<blockquote><ul>
+<li>durante o desenvolvimento iterativo</li>
+<li>depois da depuração</li>
+<li>no primeiro passo de uma integração</li>
+<li>na manutenção de software</li>
+</ul>
+</blockquote>
+
+<h4>E dentro do escopo de Orientação a Objetos?</h4>
+
+<blockquote><ul>
+<li>quando uma subclasse é desenvolvida</li>
+<li>quando uma super-classe é alterada</li>
+<li>quando uma classe servidora (classe que você estendeu, por exemplo)</li>
+<li>quando uma correção de falha é realizada</li>
+<li>quando uma classe é reusada em um novo contexto</li>
+</ul>
+</blockquote>
+
+<p>Isso é apenas um resumo, todas informações que citei podem ser consultadas com maiores detalhes nos links abaixo.</p>
+
+<h3>Fontes:</h3>
+
+<ul>
+<li><a href="http://www.slideshare.net/csilvas/testes-de-regresso-automatizados">Slideshare @csilvas - Testes de regressão automatizados</a></li>
+<li><a href="http://www.testar.me/pages/testar_me_teste_funcional_regressao.html">Teste Funcional e Regressão</a></li>
+<li><a href="http://www.ic.unicamp.br/~ranido/mc626/Regressao.pdf">Testes de Regressão - R.Anido (Unicamp)</a></li>
+<li><a href="https://practicingruby.com/articles/shared/afshdqdholth">Thoughts on regression testing - Praticing Ruby</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

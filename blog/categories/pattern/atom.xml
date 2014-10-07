@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: pattern | wevtimoteo]]></title>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/blog/categories/pattern/atom.xml" rel="self"/>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/"/>
+  <updated>2014-10-07T00:26:56-03:00</updated>
+  <id>http://wevtimoteo.github.com/wevtimoteo/</id>
+  <author>
+    <name><![CDATA[Weverton do Couto Timoteo]]></name>
+    <email><![CDATA[weverton.ct@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[O que significa 'Class Cluster' no iOS]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2014/10/06/what-is-a-class-cluster-in-ios/"/>
+    <updated>2014-10-06T23:10:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2014/10/06/what-is-a-class-cluster-in-ios</id>
+    <content type="html"><![CDATA[<p><code>Class Cluster</code> é um design pattern usado no framework Foundation.</p>
+
+<p>O objetivo desse pattern é agrupar subclasses privadas a partir de uma superclasse pública abstrata.</p>
+
+<h2>Sem Class Cluster</h2>
+
+<p>Imagine o seguinte cenário: você precisa armazenar diversas medidas, milímetros, centímetros, metros, quilômetros.</p>
+
+<p>O que todas essas medidas possuem em comum? Elas podem ser convertidas (ex.: metros => centímetros) e podem ser representadas por uma única classe.
+No entanto, o armazenamento de cada uma delas pode ser diferente.</p>
+
+<p>Para lidar com este cenário poderíamos implementar da seguinte maneira:</p>
+
+<ul>
+<li>Comprimento (superclasse)
+
+<ul>
+<li>Milímetro</li>
+<li>Centímetro</li>
+<li>Metro</li>
+<li>Quilômetro</li>
+</ul>
+</li>
+</ul>
+
+
+<p><code>Comprimento</code> é nossa superclasse que declara os métodos principais de operações que todas as outras subclasses terão em comum.</p>
+
+<p>Neste exemplo as subclasses são públicas, ou seja, você pode instanciá-las diretamente.</p>
+
+<p>O conceito é simples mas a interface começa a ficar complexa de acordo com a quantidade de subclasses.</p>
+
+<h2>Com Class Cluster</h2>
+
+<p>Com o mesmo cenário, vamos imaginar uma solução diferente: ao invés das subclasses públicas teremos apenas nossa superclasse pública. E como iremos instanciar uma subclasse irá depender do que nossa superclasse <code>Comprimento</code> suporta.</p>
+
+<p>Agora é responsabilidade da superclasse dizer qual objeto deve ser criado a partir do método de classe que for chamado.</p>
+
+<p>Exemplo:</p>
+
+<p><code>WWLength *aMeter = [WWLength lengthWithMeter:1];</code></p>
+
+<p>Cada objeto retornado pelo seu método de factory pode pertencer a um tipo de instância da subclasse. Mas não se esqueça, neste caso a subclasse está oculta, você não a conhece, então nossa instância <code>aMeter</code> é do tipo <code>WWLength</code>.</p>
+
+<p>Esse é o conceito do Class Cluster, que é utilizado intensamente no framework Foundation.</p>
+
+<p>Dê uma olhada na documentação para obter mais informações de classes do Foundation que seguem esta abordagem: <a href="https://developer.apple.com/library/ios/documentation/general/conceptual/DevPedia-CocoaCore/ClassCluster.html">Cocoa Core Class Cluters</a></p>
+]]></content>
+  </entry>
+  
+</feed>

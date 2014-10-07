@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>wevtimoteo</title>
+	<title>O que significa 'Class Cluster' no iOS - wevtimoteo</title>
 	<meta name="author" content="Weverton do Couto Timoteo">
 
 	
@@ -94,18 +94,9 @@
 </script>
 
 	
-	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/10/06/what-is-a-class-cluster-in-ios/">
-		
-			O que significa &#8216;Class Cluster&#8217; no iOS</a>
-	</h2>
-	<div class="entry-content">
-		<p><code>Class Cluster</code> é um design pattern usado no framework Foundation.</p>
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">O que significa 'Class Cluster' no iOS</h2>
+	<div class="entry-content"><p><code>Class Cluster</code> é um design pattern usado no framework Foundation.</p>
 
 <p>O objetivo desse pattern é agrupar subclasses privadas a partir de uma superclasse pública abstrata.</p>
 
@@ -152,10 +143,7 @@ No entanto, o armazenamento de cada uma delas pode ser diferente.</p>
 <p>Esse é o conceito do Class Cluster, que é utilizado intensamente no framework Foundation.</p>
 
 <p>Dê uma olhada na documentação para obter mais informações de classes do Foundation que seguem esta abordagem: <a href="https://developer.apple.com/library/ios/documentation/general/conceptual/DevPedia-CocoaCore/ClassCluster.html">Cocoa Core Class Cluters</a></p>
-
-		
-		
-	</div>
+</div>
 
 
 <div class="meta">
@@ -180,206 +168,33 @@ No entanto, o armazenamento de cada uma delas pode ser diferente.</p>
 
 </div>
 	
-		<span class="comments"><a href="/blog/2014/10/06/what-is-a-class-cluster-in-ios//index.html">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/10/06/what-is-a-class-cluster-in-ios/">Comments</a></span>
 	
 </div>
 </article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/05/15/redirecting-back-ruby-on-rails/">
-		
-			Redirecionando de volta no Rails</a>
-	</h2>
-	<div class="entry-content">
-		<p>Queria só fazer um post rápido de um truque que eu não conhecia =P</p>
-
-<p>O comando <code>redirect_to :back</code> faz exatamente o ele diz (óbvio): redireciona o usuário de volta para página que o mesmo estava.</p>
-
-<p>Esse comando é similar ao <code>redirect_to request.env["HTTP_REFERER"]</code>, por isso não se esqueça de setar o HTTP_REFERER no seu teste de controller.</p>
-
-<p>Algo bacana desse redirect é que ele leva os <code>params</code> também, então se o usuário estava em página de busca cheia de filtros, nada será perdido.</p>
-
-		
-		
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
 	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-15T13:47:00-03:00" pubdate data-updated="true">May 15<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
-
-
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-	
-		<span class="comments"><a href="/blog/2013/05/15/redirecting-back-ruby-on-rails//index.html">Comments</a></span>
-	
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/03/18/installing-specific-version-brew-formula/">
-		
-			Instalando uma versão específica de uma fórmula no Homebrew</a>
-	</h2>
-	<div class="entry-content">
-		<p>Fiquei brincando um pouco com os comandos do <code>brew</code> e surgiu uma dúvida: como instalar versões específicas no <a href="http://mxcl.github.com/homebrew/">Homebrew</a>?</p>
-
-<h3>Atualize</h3>
-
-<p>Antes de mais nada, atualize suas fórmulas com o seguinte comando:</p>
-
-<p><code>brew update</code></p>
-
-<h3>Instalando uma versão específica</h3>
-
-<p>Para listar as versões disponíveis para uma fórmula, utilize:</p>
-
-<p><code>brew versions phantomjs</code></p>
-
-<p>Você terá uma lista parecida com essa:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>1.8.1    git checkout 1a69283 /usr/local/Library/Formula/phantomjs.rb
-</span><span class='line'>1.8.0    git checkout 7b4df06 /usr/local/Library/Formula/phantomjs.rb
-</span><span class='line'>1.7.0    git checkout d37d922 /usr/local/Library/Formula/phantomjs.rb
-</span><span class='line'>1.6.1    git checkout 6b8d25f /usr/local/Library/Formula/phantomjs.rb
-</span><span class='line'>1.6.0    git checkout 9c7885b /usr/local/Library/Formula/phantomjs.rb
-</span><span class='line'>1.5.0    git checkout dbcbe16 /usr/local/Library/Formula/phantomjs.rb
-</span><span class='line'>1.4.1    git checkout cfbdf22 /usr/local/Library/Formula/phantomjs.rb
-</span><span class='line'>1.3.0    git checkout 5848860 /usr/local/Library/Formula/phantomjs.rb
-</span><span class='line'>1.2.0    git checkout c50bbb8 /usr/local/Library/Formula/phantomjs.rb
-</span><span class='line'>1.1.0    git checkout 4e7c332 /usr/local/Library/Formula/phantomjs.rb
-</span><span class='line'>1.0.0    git checkout 0476235 /usr/local/Library/Formula/phantomjs.rb
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-
-		
-		<a href="/blog/2013/03/18/installing-specific-version-brew-formula/" class="more-link">Continuar lendo &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-18T17:51:00-03:00" pubdate data-updated="true">Mar 18<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/brew/'>brew</a>, <a class='category' href='/blog/categories/macosx/'>macosx</a>
-
-
+</section>
 </div>
-	
-		<span class="comments"><a href="/blog/2013/03/18/installing-specific-version-brew-formula//index.html">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/03/12/going-straight-to-code-instead-searching-first/">
-		
-			Vá direto pro código antes de pesquisar</a>
-	</h2>
-	<div class="entry-content">
-		<p>No começo desse mês recebi uma newsletter do <a href="http://jstorimer.com">Jesse Storimer</a> que achei muito interessante e resolvi fazer uma réplica.</p>
-
-<p>Como o texto foi transmitido via newsletter não encontrei nenhum link direto pro artigo. Então irei tentar repassar a experiência nesse post, ao invés de copiar e colar o post dele em algum lugar.</p>
-
-<h2>Batendo na parede</h2>
-
-<p>Uma situação bem comum: estamos desenvolvendo e esbarramos em algum problema/bug que não conseguimos resolver. O que fazemos? Pesquisamos no Google.</p>
-
-<p>Mas isso não é uma boa prática. Ok, muitas vezes você vai cair certinho naquele link no <a href="http://www.stackoverflow.com">StackOverflow</a> falando o que você precisa fazer e até muitas vezes o próprio mantenedor responde determinada questão. Mas, outras vezes, nem que um &#8216;42&#8217; apareça na sua frente você encontra a resposta.</p>
-
-<p>Essa resposta que você tanto procura, sempre esteve em um único lugar: <strong>no código</strong>.</p>
-
-
-		
-		<a href="/blog/2013/03/12/going-straight-to-code-instead-searching-first/" class="more-link">Continuar lendo &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-12T14:13:00-03:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/debugging/'>debugging</a>, <a class='category' href='/blog/categories/development/'>development</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2013/03/12/going-straight-to-code-instead-searching-first//index.html">Comments</a></span>
-	
-</div>
-</article>
-
-<nav id="pagenavi">
-    
-    
-        <a href="/blog/page/2/" class="next">Next</a>
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
 	<footer id="footer" class="inner">Copyright &copy; 2014
 
     Weverton do Couto Timoteo
@@ -398,7 +213,10 @@ No entanto, o armazenamento de cada uma delas pode ser diferente.</p>
       var disqus_shortname = 'wevtimoteo';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://wevtimoteo.github.com/wevtimoteo/blog/2014/10/06/what-is-a-class-cluster-in-ios/';
+        var disqus_url = 'http://wevtimoteo.github.com/wevtimoteo/blog/2014/10/06/what-is-a-class-cluster-in-ios/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

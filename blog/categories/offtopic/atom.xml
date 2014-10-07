@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Offtopic | wevtimoteo]]></title>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/blog/categories/offtopic/atom.xml" rel="self"/>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/"/>
+  <updated>2014-10-07T00:26:56-03:00</updated>
+  <id>http://wevtimoteo.github.com/wevtimoteo/</id>
+  <author>
+    <name><![CDATA[Weverton do Couto Timoteo]]></name>
+    <email><![CDATA[weverton.ct@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tudo pronto para começar]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/01/15/tudo-pronto-para-comecar/"/>
+    <updated>2013-01-15T10:55:00-02:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/01/15/tudo-pronto-para-comecar</id>
+    <content type="html"><![CDATA[<p>Olá! Finalmente coloquei uma utilidade nesse domínio, apesar que desde o início o objetivo já era colocar um blog aqui.</p>
+
+<p>Meu objetivo com esse blog é escrever e documentar algumas experiências e criar um material de referência para a própria comunidade, já no embalo de retribuir com o que aprendi.</p>
+
+<p>Muitos dos posts serão voltados a desenvolvimento de software mas espero escrever sobre o <a href="http://manganomori.com.br">Mangá no Mori</a> também.</p>
+
+<p>Também sou co-fundador do blog <a href="http://abstraindo.com">Abstraindo.com</a> (apesar de não escrever nada nele há um bom tempo) mas continua valendo :)</p>
+
+<p>Bom, para um post de introdução será só isso, agora eu rezo para não abandonar este blog também.</p>
+]]></content>
+  </entry>
+  
+</feed>

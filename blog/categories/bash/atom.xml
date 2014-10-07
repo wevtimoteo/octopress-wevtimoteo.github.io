@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: bash | wevtimoteo]]></title>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/blog/categories/bash/atom.xml" rel="self"/>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/"/>
+  <updated>2014-10-07T00:26:56-03:00</updated>
+  <id>http://wevtimoteo.github.com/wevtimoteo/</id>
+  <author>
+    <name><![CDATA[Weverton do Couto Timoteo]]></name>
+    <email><![CDATA[weverton.ct@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Abrindo arquivos alterados no Git com seu $EDITOR]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/08/opening-all-git-modified-files-in-your-editor/"/>
+    <updated>2013-03-08T15:13:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/08/opening-all-git-modified-files-in-your-editor</id>
+    <content type="html"><![CDATA[<p>Hoje cheguei no projeto que estou trabalhando na <a href="http://www.baby.com.br">Baby</a> e um simples:</p>
+
+<p><code>git st</code> (git status)</p>
+
+<p>E obtenho:</p>
+
+<p>```</p>
+
+<h1>On branch master</h1>
+
+<h1>Changes not staged for commit:</h1>
+
+<h1>(use "git add <file>..." to update what will be committed)</h1>
+
+<h1>(use "git checkout -- <file>..." to discard changes in working directory)</h1>
+
+<p>#</p>
+
+<h1>modified:   Gemfile</h1>
+
+<h1>modified:   Gemfile.lock</h1>
+
+<h1>modified:   app/api/company.rb</h1>
+
+<h1>modified:   app/helpers/authentication_helper.rb</h1>
+
+<h1>modified:   config/boot.rb</h1>
+
+<h1>modified:   config/initializers/app_config.rb</h1>
+
+<p>```</p>
+
+<p>Pensei: seria legal, automaticamente abrir esses arquivos no meu $EDITOR.</p>
+
+<p>Um simples <code>git status --short</code> resolveria isso, adicionado ao awk e o próprio $EDITOR:</p>
+
+<p><code>$EDITOR $(git status --short | awk '$1 ~ /^M$/ {print $2}')</code></p>
+
+<p>Isso fará com que todos os arquivos modificados sejam abertos no seu $EDITOR favorito. Se for <code>vim</code>, todos os arquivos serão abertos em buffers. Para abrir em uma abas:</p>
+
+<p><code>$EDITOR -p $(git status --short | awk '$1 ~ /^M$/ {print $2}')</code></p>
+
+<p>Depois disso pensei em usar em alias. Mas usar <code>gitedit</code> seria muito chato, então fiz essa modificação no meu <a href="https://github.com/wolcanus/dotfiles/commit/4321444655acae64b05ee02faad7f463df19aade">dotfiles</a> para poder utilizar um simples:</p>
+
+<p><code>git edit</code></p>
+]]></content>
+  </entry>
+  
+</feed>

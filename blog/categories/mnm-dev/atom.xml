@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: MnM Dev | wevtimoteo]]></title>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/blog/categories/mnm-dev/atom.xml" rel="self"/>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/"/>
+  <updated>2014-10-07T00:26:56-03:00</updated>
+  <id>http://wevtimoteo.github.com/wevtimoteo/</id>
+  <author>
+    <name><![CDATA[Weverton do Couto Timoteo]]></name>
+    <email><![CDATA[weverton.ct@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MnM Dev: Adicionando overlay e tooltip nas imagens]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/01/16/mnm-dev-adicionando-overlay-e-tooltip-nas-imagens/"/>
+    <updated>2013-01-16T15:44:00-02:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/01/16/mnm-dev-adicionando-overlay-e-tooltip-nas-imagens</id>
+    <content type="html"><![CDATA[<p>Toda quarta-feira irei fazer um post sobre algo que foi desenvolvido no <a href="http://www.manganomori.com.br">Mangá no Mori</a> já que nossas reuniões acontecem toda terça à noite. E para estrear a coluna, esse post explicará como fazer um overlay de uma imagemcomo no exemplo abaixo:</p>
+
+<p><img src="/images/posts/mnm_dev_unavailable_cover.png" title="[Capa indisponível[Capa indisponível]]" ></p>
+
+<p>Quando o usuário clica com o botão direito não aparecerá a opção de salvar a imagem.</p>
+
+<!-- more -->
+
+
+<p>Para fazer isso criamos um helper do Rails:</p>
+]]></content>
+  </entry>
+  
+</feed>

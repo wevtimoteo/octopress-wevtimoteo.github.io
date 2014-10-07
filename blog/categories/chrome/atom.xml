@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: chrome | wevtimoteo]]></title>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/blog/categories/chrome/atom.xml" rel="self"/>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/"/>
+  <updated>2014-10-07T00:26:56-03:00</updated>
+  <id>http://wevtimoteo.github.com/wevtimoteo/</id>
+  <author>
+    <name><![CDATA[Weverton do Couto Timoteo]]></name>
+    <email><![CDATA[weverton.ct@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Trocando de perfil no Google Chrome com atalhos de teclado]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/05/atalho-para-trocar-perfis-no-google-chrome/"/>
+    <updated>2013-03-05T13:22:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/05/atalho-para-trocar-perfis-no-google-chrome</id>
+    <content type="html"><![CDATA[<p>Todos os dias quando chego na <a href="http://www.baby.com.br">Baby</a>, abro o Google Chrome e uso os perfis para alternar entre minha Google Account e a do trabalho. No entanto, ficar clicando é um pouco chato e todos sabemos disso.</p>
+
+<p>Saí em busca de um atalho para tal:</p>
+
+<p><code>⌘ + Shift + M</code></p>
+
+<p>Pronto, problema resolvido!</p>
+
+<p>PS: Achei estranho o próprio Chrome não mostrar o atalho na Menu Bar.</p>
+]]></content>
+  </entry>
+  
+</feed>

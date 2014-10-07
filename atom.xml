@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[wevtimoteo]]></title>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/atom.xml" rel="self"/>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/"/>
+  <updated>2014-10-07T00:26:56-03:00</updated>
+  <id>http://wevtimoteo.github.com/wevtimoteo/</id>
+  <author>
+    <name><![CDATA[Weverton do Couto Timoteo]]></name>
+    <email><![CDATA[weverton.ct@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[O que significa 'Class Cluster' no iOS]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2014/10/06/what-is-a-class-cluster-in-ios/"/>
+    <updated>2014-10-06T23:10:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2014/10/06/what-is-a-class-cluster-in-ios</id>
+    <content type="html"><![CDATA[<p><code>Class Cluster</code> é um design pattern usado no framework Foundation.</p>
+
+<p>O objetivo desse pattern é agrupar subclasses privadas a partir de uma superclasse pública abstrata.</p>
+
+<h2>Sem Class Cluster</h2>
+
+<p>Imagine o seguinte cenário: você precisa armazenar diversas medidas, milímetros, centímetros, metros, quilômetros.</p>
+
+<p>O que todas essas medidas possuem em comum? Elas podem ser convertidas (ex.: metros => centímetros) e podem ser representadas por uma única classe.
+No entanto, o armazenamento de cada uma delas pode ser diferente.</p>
+
+<p>Para lidar com este cenário poderíamos implementar da seguinte maneira:</p>
+
+<ul>
+<li>Comprimento (superclasse)
+
+<ul>
+<li>Milímetro</li>
+<li>Centímetro</li>
+<li>Metro</li>
+<li>Quilômetro</li>
+</ul>
+</li>
+</ul>
+
+
+<p><code>Comprimento</code> é nossa superclasse que declara os métodos principais de operações que todas as outras subclasses terão em comum.</p>
+
+<p>Neste exemplo as subclasses são públicas, ou seja, você pode instanciá-las diretamente.</p>
+
+<p>O conceito é simples mas a interface começa a ficar complexa de acordo com a quantidade de subclasses.</p>
+
+<h2>Com Class Cluster</h2>
+
+<p>Com o mesmo cenário, vamos imaginar uma solução diferente: ao invés das subclasses públicas teremos apenas nossa superclasse pública. E como iremos instanciar uma subclasse irá depender do que nossa superclasse <code>Comprimento</code> suporta.</p>
+
+<p>Agora é responsabilidade da superclasse dizer qual objeto deve ser criado a partir do método de classe que for chamado.</p>
+
+<p>Exemplo:</p>
+
+<p><code>WWLength *aMeter = [WWLength lengthWithMeter:1];</code></p>
+
+<p>Cada objeto retornado pelo seu método de factory pode pertencer a um tipo de instância da subclasse. Mas não se esqueça, neste caso a subclasse está oculta, você não a conhece, então nossa instância <code>aMeter</code> é do tipo <code>WWLength</code>.</p>
+
+<p>Esse é o conceito do Class Cluster, que é utilizado intensamente no framework Foundation.</p>
+
+<p>Dê uma olhada na documentação para obter mais informações de classes do Foundation que seguem esta abordagem: <a href="https://developer.apple.com/library/ios/documentation/general/conceptual/DevPedia-CocoaCore/ClassCluster.html">Cocoa Core Class Cluters</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Redirecionando de volta no Rails]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/05/15/redirecting-back-ruby-on-rails/"/>
+    <updated>2013-05-15T13:47:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/05/15/redirecting-back-ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>Queria só fazer um post rápido de um truque que eu não conhecia =P</p>
+
+<p>O comando <code>redirect_to :back</code> faz exatamente o ele diz (óbvio): redireciona o usuário de volta para página que o mesmo estava.</p>
+
+<p>Esse comando é similar ao <code>redirect_to request.env["HTTP_REFERER"]</code>, por isso não se esqueça de setar o HTTP_REFERER no seu teste de controller.</p>
+
+<p>Algo bacana desse redirect é que ele leva os <code>params</code> também, então se o usuário estava em página de busca cheia de filtros, nada será perdido.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Instalando uma versão específica de uma fórmula no Homebrew]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/18/installing-specific-version-brew-formula/"/>
+    <updated>2013-03-18T17:51:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/18/installing-specific-version-brew-formula</id>
+    <content type="html"><![CDATA[<p>Fiquei brincando um pouco com os comandos do <code>brew</code> e surgiu uma dúvida: como instalar versões específicas no <a href="http://mxcl.github.com/homebrew/">Homebrew</a>?</p>
+
+<h3>Atualize</h3>
+
+<p>Antes de mais nada, atualize suas fórmulas com o seguinte comando:</p>
+
+<p><code>brew update</code></p>
+
+<h3>Instalando uma versão específica</h3>
+
+<p>Para listar as versões disponíveis para uma fórmula, utilize:</p>
+
+<p><code>brew versions phantomjs</code></p>
+
+<p>Você terá uma lista parecida com essa:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>1.8.1    git checkout 1a69283 /usr/local/Library/Formula/phantomjs.rb
+</span><span class='line'>1.8.0    git checkout 7b4df06 /usr/local/Library/Formula/phantomjs.rb
+</span><span class='line'>1.7.0    git checkout d37d922 /usr/local/Library/Formula/phantomjs.rb
+</span><span class='line'>1.6.1    git checkout 6b8d25f /usr/local/Library/Formula/phantomjs.rb
+</span><span class='line'>1.6.0    git checkout 9c7885b /usr/local/Library/Formula/phantomjs.rb
+</span><span class='line'>1.5.0    git checkout dbcbe16 /usr/local/Library/Formula/phantomjs.rb
+</span><span class='line'>1.4.1    git checkout cfbdf22 /usr/local/Library/Formula/phantomjs.rb
+</span><span class='line'>1.3.0    git checkout 5848860 /usr/local/Library/Formula/phantomjs.rb
+</span><span class='line'>1.2.0    git checkout c50bbb8 /usr/local/Library/Formula/phantomjs.rb
+</span><span class='line'>1.1.0    git checkout 4e7c332 /usr/local/Library/Formula/phantomjs.rb
+</span><span class='line'>1.0.0    git checkout 0476235 /usr/local/Library/Formula/phantomjs.rb
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- more -->
+
+
+<p>Agora, vamos instalar a versão 1.7.0. Para isso, acesse o diretório das fórmulas:</p>
+
+<p><code>cd /usr/local/Library/Formula/</code></p>
+
+<p>E use o próprio comando do output do <code>brew versions phantomjs</code>:</p>
+
+<p><code>git checkout d37d922 /usr/local/Library/Formula/phantomjs.rb</code></p>
+
+<p>Isso fará com que a fórmula do <a href="http://phantomjs.org/">PhantomJS</a> volte para versão do SHA utilizado.</p>
+
+<p>Agora use:</p>
+
+<p><code>brew install phantomjs</code></p>
+
+<p>Se tudo ocorreu bem, você deve obter um resultado parecido com este:</p>
+
+<p><code>/usr/local/Cellar/phantomjs/1.7.0: 4 files, 10M, built in 2 seconds</code></p>
+
+<h2>Instalando outras versões</h2>
+
+<p>Agora que você já sabe como instalar uma versão, vamos instalar a mais recente, no meu caso é <code>1.8.1</code>:</p>
+
+<p><code>git checkout 1a69283 /usr/local/Library/Formula/phantomjs.rb</code></p>
+
+<p>Como você já possui a fórmula do PhantomJS 1.7.0 instalada, você vai precisar &#8220;desativá-la&#8221; primeiro:</p>
+
+<p><code>brew unlink phantomjs</code></p>
+
+<p>Agora é só instalar:</p>
+
+<p><code>brew install phantomjs</code></p>
+
+<p>O resultado será como este:</p>
+
+<p><code>/usr/local/Cellar/phantomjs/1.8.1: 96 files, 9.2M, built in 2 seconds</code></p>
+
+<h2>Trocando entre versões</h2>
+
+<p>Agora que você está trabalhando com várias versões instaladas, nada mais justo você poder alternar entre elas.</p>
+
+<p>Primeiro vamos listar as versões que você possui na sua máquina:</p>
+
+<p><code>brew info phantomjs</code></p>
+
+<p>Eu tenho instalado:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>phantomjs: stable 1.8.2
+</span><span class='line'>http://www.phantomjs.org/
+</span><span class='line'>/usr/local/Cellar/phantomjs/1.7.0 <span class="o">(</span>4 files, 10M<span class="o">)</span>
+</span><span class='line'>/usr/local/Cellar/phantomjs/1.8.1 <span class="o">(</span>96 files, 11M<span class="o">)</span>
+</span><span class='line'>/usr/local/Cellar/phantomjs/1.8.2 <span class="o">(</span>96 files, 9.2M<span class="o">)</span> *
+</span><span class='line'>https://github.com/mxcl/homebrew/commits/master/Library/Formula/phantomjs.rb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A versão que está com <em>*</em> é a que está ativada.
+Agora vamos ir para 1.7.0:</p>
+
+<p><code>brew switch phantomjs 1.7.0</code></p>
+
+<p>Dê um <code>brew info phantomjs</code> para confirmar se deu tudo certo:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>phantomjs: stable 1.8.2
+</span><span class='line'>http://www.phantomjs.org/
+</span><span class='line'>/usr/local/Cellar/phantomjs/1.7.0 <span class="o">(</span>4 files, 10M<span class="o">)</span> *
+</span><span class='line'>/usr/local/Cellar/phantomjs/1.8.1 <span class="o">(</span>96 files, 11M<span class="o">)</span>
+</span><span class='line'>/usr/local/Cellar/phantomjs/1.8.2 <span class="o">(</span>96 files, 9.2M<span class="o">)</span>
+</span><span class='line'>https://github.com/mxcl/homebrew/commits/master/Library/Formula/phantomjs.rb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pronto! Se quiser desinstalar é só ir utilizando <code>brew uninstall phantomjs</code> entre as versões.
+Ou se preferir, você pode remover tudo de uma vez:</p>
+
+<p><code>brew uninstall -f phantomjs</code></p>
+
+<p>Se der <code>brew info phantomjs</code> verá que nenhuma fórmula está instalada:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>phantomjs: stable 1.8.2
+</span><span class='line'>http://www.phantomjs.org/
+</span><span class='line'>Not installed
+</span><span class='line'>https://github.com/mxcl/homebrew/commits/master/Library/Formula/phantomjs.rb
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vá direto pro código antes de pesquisar]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/12/going-straight-to-code-instead-searching-first/"/>
+    <updated>2013-03-12T14:13:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/12/going-straight-to-code-instead-searching-first</id>
+    <content type="html"><![CDATA[<p>No começo desse mês recebi uma newsletter do <a href="http://jstorimer.com">Jesse Storimer</a> que achei muito interessante e resolvi fazer uma réplica.</p>
+
+<p>Como o texto foi transmitido via newsletter não encontrei nenhum link direto pro artigo. Então irei tentar repassar a experiência nesse post, ao invés de copiar e colar o post dele em algum lugar.</p>
+
+<h2>Batendo na parede</h2>
+
+<p>Uma situação bem comum: estamos desenvolvendo e esbarramos em algum problema/bug que não conseguimos resolver. O que fazemos? Pesquisamos no Google.</p>
+
+<p>Mas isso não é uma boa prática. Ok, muitas vezes você vai cair certinho naquele link no <a href="http://www.stackoverflow.com">StackOverflow</a> falando o que você precisa fazer e até muitas vezes o próprio mantenedor responde determinada questão. Mas, outras vezes, nem que um &#8216;42&#8217; apareça na sua frente você encontra a resposta.</p>
+
+<p>Essa resposta que você tanto procura, sempre esteve em um único lugar: <strong>no código</strong>.</p>
+
+<!-- more -->
+
+
+<h2>Encontrando a solução</h2>
+
+<p>Algumas vezes nem no código você precisa olhar, uma simples lida na documentação (ponto que o <a href="http://twitter.com/darthmv">@darthmv</a> sempre fala) resolva seu problema ou te dê uma luz.</p>
+
+<p>Agora quando isso não resolve, vá direto ao código!</p>
+
+<h2>Maneiras de buscar no código/Ou como chegar até ele</h2>
+
+<h3>bundle open <nomedagem></h3>
+
+<p>Claro, se você está usando <a href="http://www.gembundler.com">Bundler</a> isso faz toda diferença. Esse comando irá abrir o código da Gem no seu <code>$EDITOR</code>.</p>
+
+<p>Combinando o <code>bundle open</code> com um ack/grep ou até <a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a> são ótimos aliados para entender e encontrar o que está relacionado com o seu problema.</p>
+
+<h3>qwandry</h3>
+
+<p>qwandry é uma gem que permite você abrir o código fonte de qualquer coisa da standard lib do Ruby.</p>
+
+<p>Para instalar: <code>gem install qwandry</code> e para usar <code>qw nome_da_classe_na_standard_lib</code>. Isso também abrirá o código fonte no seu $EDITOR.</p>
+
+<p>Por exemplo, tenho dúvidas de como renderizar um arquivo ERB, qual método devo utilizar? Basta usar:</p>
+
+<p><code>qw erb</code></p>
+
+<p>E então explorar o código fonte :)</p>
+
+<h3>gem_readme</h3>
+
+<p>Essa gem é bem útil quando você não quer ficar procurando a documentação no <a href="http://www.github.com">GitHub</a> ou no <a href="http://www.rubygems.org">RubyGems</a>. Ela abre o README da gem que você deseja com um simples comando.</p>
+
+<p><code>gem install gem_readme</code></p>
+
+<p>Para usar:</p>
+
+<p><code>gem readme activeadmin</code></p>
+
+<h3>ctags</h3>
+
+<p>Você já deve ter ouvido falar de <a href="http://ctags.sourceforge.net/ctags.html">Ctags</a>, ou até usar. Se você ainda não usa de uma testada.</p>
+
+<p>O Ctags é bem útil para navegar entre o código, principalmente código desconhecido.</p>
+
+<p>Uma boa combinação é a <a href="https://github.com/tpope/gem-ctags">gem-ctags do @tpope</a> e <a href="http://www.vim.org/scripts/script.php?script_id=1343">AutoTag</a> (só não esqueça de colocar o ctags no seu gitignore global).</p>
+
+<p>O Jesse aproveitou para dar <a href="http://www.jstorimer.com/ri.html">umas dicas de usar o <strong>RI</strong> ao invés do <strong>Rdoc</strong></a>.</p>
+
+<h2>O que você ganha fazendo tudo isso?</h2>
+
+<h3>Documentação não conta toda a história</h3>
+
+<p>Nessa parte, o Jesse deu um exemplo bem bacana que eu vou simplesmente citar aqui:</p>
+
+<blockquote><p>ActiveRecord is a great example of this. When I&#8217;m trying to figure out what touch or reload or some other ActiveRecord::Base method does, I could look at the documentation. It would tell me how the method is intended to be used, what parameters it takes, and what it returns.</p>
+
+<p>In most cases, this is all you need. But if you&#8217;ve got a weird bug, or you want to know how a given method interacts with the database, you&#8217;ve got to go to the code. Once you do, you&#8217;ll see that the reload method is defined several times in different modules that call each other, tacking on different behaviours. This is something that the documentation didn&#8217;t make clear.</p>
+
+<p>If you want the whole story, go to the source.</p></blockquote>
+
+<h3>Testes são as melhores documentações</h3>
+
+<p>Como a comunidade Ruby ama testes, nada melhor do que olhar os testes para entender como usar determinado método ou até mesmo uma API.</p>
+
+<h3>O melhor motivo: você aprende coisas novas</h3>
+
+<p>Outras pessoas pensam de outra forma, têm outro estilo, outros approaches que nós não temos. Lendo o código dessas pessoas irá inspirar você a ter uma nova ideia.</p>
+
+<h2>E se tudo falhar?</h2>
+
+<p>Aí sim você vai atrás de ajuda online. Mas pelo menos você já tentou de tudo e realmente aprendeu muito com isso!</p>
+
+<h2>Créditos</h2>
+
+<p>Eu apenas traduzi e expliquei de uma forma diferente, todos os créditos vão para o <a href="http://jstorimer.com">Jesse Storimer</a> pelo grande artigo.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[O que é Teste de Regressão?]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/11/what-is-regression-testing/"/>
+    <updated>2013-03-11T10:47:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/11/what-is-regression-testing</id>
+    <content type="html"><![CDATA[<p>Há um tempo já me pego lendo e ouvindo esse termo e nunca tinha entendido exatamente quais eram os momentos que eu deveria fazê-lo, então aproveitei para fazer um review completo sobre &#8216;O que é Teste de Regressão?&#8217;.</p>
+
+<h3>Qual o objetivo do teste de software?</h3>
+
+<blockquote><p>Identificar suas falhas para que a correção seja feita antes da entrega do produto ao usuário final.</p></blockquote>
+
+<h3>Como um teste de regressão surge?</h3>
+
+<blockquote><p>Um componente novo ou modificado pode falhar quando usado com componentes inalterados, causando defeito
+nos componentes inalterados pela geração de efeitos colaterais ou pelas características de interação.</p></blockquote>
+
+<p>Quando isso ocorre, diz-se que o sisteme sobre testes regrediu, por isso esses testes são chamados de testes de regressão.</p>
+
+<p>Em poucas palavras, você quebrou o teste de uma outra funcionalidade por conta dessa nova <em>feature</em> ou <em>correção de bug</em>.</p>
+
+<h3>Quando um teste de regressão é utilizado?</h3>
+
+<blockquote><ul>
+<li>durante o desenvolvimento iterativo</li>
+<li>depois da depuração</li>
+<li>no primeiro passo de uma integração</li>
+<li>na manutenção de software</li>
+</ul>
+</blockquote>
+
+<h4>E dentro do escopo de Orientação a Objetos?</h4>
+
+<blockquote><ul>
+<li>quando uma subclasse é desenvolvida</li>
+<li>quando uma super-classe é alterada</li>
+<li>quando uma classe servidora (classe que você estendeu, por exemplo)</li>
+<li>quando uma correção de falha é realizada</li>
+<li>quando uma classe é reusada em um novo contexto</li>
+</ul>
+</blockquote>
+
+<p>Isso é apenas um resumo, todas informações que citei podem ser consultadas com maiores detalhes nos links abaixo.</p>
+
+<h3>Fontes:</h3>
+
+<ul>
+<li><a href="http://www.slideshare.net/csilvas/testes-de-regresso-automatizados">Slideshare @csilvas - Testes de regressão automatizados</a></li>
+<li><a href="http://www.testar.me/pages/testar_me_teste_funcional_regressao.html">Teste Funcional e Regressão</a></li>
+<li><a href="http://www.ic.unicamp.br/~ranido/mc626/Regressao.pdf">Testes de Regressão - R.Anido (Unicamp)</a></li>
+<li><a href="https://practicingruby.com/articles/shared/afshdqdholth">Thoughts on regression testing - Praticing Ruby</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Abrindo arquivos alterados no Git com seu $EDITOR]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/08/opening-all-git-modified-files-in-your-editor/"/>
+    <updated>2013-03-08T15:13:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/08/opening-all-git-modified-files-in-your-editor</id>
+    <content type="html"><![CDATA[<p>Hoje cheguei no projeto que estou trabalhando na <a href="http://www.baby.com.br">Baby</a> e um simples:</p>
+
+<p><code>git st</code> (git status)</p>
+
+<p>E obtenho:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># On branch master
+</span><span class='line'># Changes not staged for commit:
+</span><span class='line'>#   (use "git add &lt;file&gt;..." to update what will be committed)
+</span><span class='line'>#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+</span><span class='line'>#
+</span><span class='line'># modified:   Gemfile
+</span><span class='line'># modified:   Gemfile.lock
+</span><span class='line'># modified:   app/api/company.rb
+</span><span class='line'># modified:   app/helpers/authentication_helper.rb
+</span><span class='line'># modified:   config/boot.rb
+</span><span class='line'># modified:   config/initializers/app_config.rb</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pensei: seria legal, automaticamente abrir esses arquivos no meu $EDITOR.</p>
+
+<p>Um simples <code>git status --short</code> resolveria isso, adicionado ao awk e o próprio $EDITOR:</p>
+
+<p><code>$EDITOR $(git status --short | awk '$1 ~ /^M$/ {print $2}')</code></p>
+
+<p>Isso fará com que todos os arquivos modificados sejam abertos no seu $EDITOR favorito. Se for <code>vim</code>, todos os arquivos serão abertos em buffers. Para abrir em uma abas:</p>
+
+<p><code>$EDITOR -p $(git status --short | awk '$1 ~ /^M$/ {print $2}')</code></p>
+
+<p>Depois disso pensei em usar em alias. Mas usar <code>gitedit</code> seria muito chato, então fiz essa modificação no meu <a href="https://github.com/wolcanus/dotfiles/commit/4321444655acae64b05ee02faad7f463df19aade">dotfiles</a> para poder utilizar um simples:</p>
+
+<p><code>git edit</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Trocando de perfil no Google Chrome com atalhos de teclado]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/05/atalho-para-trocar-perfis-no-google-chrome/"/>
+    <updated>2013-03-05T13:22:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/05/atalho-para-trocar-perfis-no-google-chrome</id>
+    <content type="html"><![CDATA[<p>Todos os dias quando chego na <a href="http://www.baby.com.br">Baby</a>, abro o Google Chrome e uso os perfis para alternar entre minha Google Account e a do trabalho. No entanto, ficar clicando é um pouco chato e todos sabemos disso.</p>
+
+<p>Saí em busca de um atalho para tal:</p>
+
+<p><code>⌘ + Shift + M</code></p>
+
+<p>Pronto, problema resolvido!</p>
+
+<p>PS: Achei estranho o próprio Chrome não mostrar o atalho na Menu Bar.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Salvando um arquivo como root sem fechar e abrir o Vim]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/01/salvar-como-root-dentro-do-vim/"/>
+    <updated>2013-03-01T11:29:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/01/salvar-como-root-dentro-do-vim</id>
+    <content type="html"><![CDATA[<p>Seguindo a dica do <a href="http://blog.lucascaton.com.br/">Lucas Catón</a>: algumas vezes abrimos um arquivo que não temos permissão de escrita.</p>
+
+<p>Mas já alteramos seu conteúdo =/</p>
+
+<p>Ao invés de sair do Vim e abrir o arquivo como sudo/sudo -u, podemos executar:</p>
+
+<p><code>:w !sudo tee %</code></p>
+
+<p>Pronto! Nada de sair e entrar no vim por problemas de permissão de escrita!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MnM Dev: Adicionando overlay e tooltip nas imagens]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/01/16/mnm-dev-adicionando-overlay-e-tooltip-nas-imagens/"/>
+    <updated>2013-01-16T15:44:00-02:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/01/16/mnm-dev-adicionando-overlay-e-tooltip-nas-imagens</id>
+    <content type="html"><![CDATA[<p>Toda quarta-feira irei fazer um post sobre algo que foi desenvolvido no <a href="http://www.manganomori.com.br">Mangá no Mori</a> já que nossas reuniões acontecem toda terça à noite. E para estrear a coluna, esse post explicará como fazer um overlay de uma imagemcomo no exemplo abaixo:</p>
+
+<p><img src="http://wevtimoteo.github.com/wevtimoteo/images/posts/mnm_dev_unavailable_cover.png" title="[Capa indisponível[Capa indisponível]]" ></p>
+
+<p>Quando o usuário clica com o botão direito não aparecerá a opção de salvar a imagem.</p>
+
+<!-- more -->
+
+
+<p>Para fazer isso criamos um helper do Rails:</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tudo pronto para começar]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/01/15/tudo-pronto-para-comecar/"/>
+    <updated>2013-01-15T10:55:00-02:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/01/15/tudo-pronto-para-comecar</id>
+    <content type="html"><![CDATA[<p>Olá! Finalmente coloquei uma utilidade nesse domínio, apesar que desde o início o objetivo já era colocar um blog aqui.</p>
+
+<p>Meu objetivo com esse blog é escrever e documentar algumas experiências e criar um material de referência para a própria comunidade, já no embalo de retribuir com o que aprendi.</p>
+
+<p>Muitos dos posts serão voltados a desenvolvimento de software mas espero escrever sobre o <a href="http://manganomori.com.br">Mangá no Mori</a> também.</p>
+
+<p>Também sou co-fundador do blog <a href="http://abstraindo.com">Abstraindo.com</a> (apesar de não escrever nada nele há um bom tempo) mas continua valendo :)</p>
+
+<p>Bom, para um post de introdução será só isso, agora eu rezo para não abandonar este blog também.</p>
+]]></content>
+  </entry>
+  
+</feed>

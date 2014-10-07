@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://wevtimoteo.github.com/wevtimoteo/sitemap.xml 

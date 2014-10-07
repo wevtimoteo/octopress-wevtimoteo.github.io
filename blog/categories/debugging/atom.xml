@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: debugging | wevtimoteo]]></title>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/blog/categories/debugging/atom.xml" rel="self"/>
+  <link href="http://wevtimoteo.github.com/wevtimoteo/"/>
+  <updated>2014-10-07T00:26:56-03:00</updated>
+  <id>http://wevtimoteo.github.com/wevtimoteo/</id>
+  <author>
+    <name><![CDATA[Weverton do Couto Timoteo]]></name>
+    <email><![CDATA[weverton.ct@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Vá direto pro código antes de pesquisar]]></title>
+    <link href="http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/12/going-straight-to-code-instead-searching-first/"/>
+    <updated>2013-03-12T14:13:00-03:00</updated>
+    <id>http://wevtimoteo.github.com/wevtimoteo/blog/2013/03/12/going-straight-to-code-instead-searching-first</id>
+    <content type="html"><![CDATA[<p>No começo desse mês recebi uma newsletter do <a href="http://jstorimer.com">Jesse Storimer</a> que achei muito interessante e resolvi fazer uma réplica.</p>
+
+<p>Como o texto foi transmitido via newsletter não encontrei nenhum link direto pro artigo. Então irei tentar repassar a experiência nesse post, ao invés de copiar e colar o post dele em algum lugar.</p>
+
+<h2>Batendo na parede</h2>
+
+<p>Uma situação bem comum: estamos desenvolvendo e esbarramos em algum problema/bug que não conseguimos resolver. O que fazemos? Pesquisamos no Google.</p>
+
+<p>Mas isso não é uma boa prática. Ok, muitas vezes você vai cair certinho naquele link no <a href="http://www.stackoverflow.com">StackOverflow</a> falando o que você precisa fazer e até muitas vezes o próprio mantenedor responde determinada questão. Mas, outras vezes, nem que um '42' apareça na sua frente você encontra a resposta.</p>
+
+<p>Essa resposta que você tanto procura, sempre esteve em um único lugar: <strong>no código</strong>.</p>
+
+<!-- more -->
+
+
+<h2>Encontrando a solução</h2>
+
+<p>Algumas vezes nem no código você precisa olhar, uma simples lida na documentação (ponto que o <a href="http://twitter.com/darthmv">@darthmv</a> sempre fala) resolva seu problema ou te dê uma luz.</p>
+
+<p>Agora quando isso não resolve, vá direto ao código!</p>
+
+<h2>Maneiras de buscar no código/Ou como chegar até ele</h2>
+
+<h3>bundle open <nomedagem></h3>
+
+<p>Claro, se você está usando <a href="http://www.gembundler.com">Bundler</a> isso faz toda diferença. Esse comando irá abrir o código da Gem no seu <code>$EDITOR</code>.</p>
+
+<p>Combinando o <code>bundle open</code> com um ack/grep ou até <a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a> são ótimos aliados para entender e encontrar o que está relacionado com o seu problema.</p>
+
+<h3>qwandry</h3>
+
+<p>qwandry é uma gem que permite você abrir o código fonte de qualquer coisa da standard lib do Ruby.</p>
+
+<p>Para instalar: <code>gem install qwandry</code> e para usar <code>qw nome_da_classe_na_standard_lib</code>. Isso também abrirá o código fonte no seu $EDITOR.</p>
+
+<p>Por exemplo, tenho dúvidas de como renderizar um arquivo ERB, qual método devo utilizar? Basta usar:</p>
+
+<p><code>qw erb</code></p>
+
+<p>E então explorar o código fonte :)</p>
+
+<h3>gem_readme</h3>
+
+<p>Essa gem é bem útil quando você não quer ficar procurando a documentação no <a href="http://www.github.com">GitHub</a> ou no <a href="http://www.rubygems.org">RubyGems</a>. Ela abre o README da gem que você deseja com um simples comando.</p>
+
+<p><code>gem install gem_readme</code></p>
+
+<p>Para usar:</p>
+
+<p><code>gem readme activeadmin</code></p>
+
+<h3>ctags</h3>
+
+<p>Você já deve ter ouvido falar de <a href="http://ctags.sourceforge.net/ctags.html">Ctags</a>, ou até usar. Se você ainda não usa de uma testada.</p>
+
+<p>O Ctags é bem útil para navegar entre o código, principalmente código desconhecido.</p>
+
+<p>Uma boa combinação é a <a href="https://github.com/tpope/gem-ctags">gem-ctags do @tpope</a> e <a href="http://www.vim.org/scripts/script.php?script_id=1343">AutoTag</a> (só não esqueça de colocar o ctags no seu gitignore global).</p>
+
+<p>O Jesse aproveitou para dar <a href="http://www.jstorimer.com/ri.html">umas dicas de usar o <strong>RI</strong> ao invés do <strong>Rdoc</strong></a>.</p>
+
+<h2>O que você ganha fazendo tudo isso?</h2>
+
+<h3>Documentação não conta toda a história</h3>
+
+<p>Nessa parte, o Jesse deu um exemplo bem bacana que eu vou simplesmente citar aqui:</p>
+
+<blockquote><p>ActiveRecord is a great example of this. When I'm trying to figure out what touch or reload or some other ActiveRecord::Base method does, I could look at the documentation. It would tell me how the method is intended to be used, what parameters it takes, and what it returns.</p>
+
+<p>In most cases, this is all you need. But if you've got a weird bug, or you want to know how a given method interacts with the database, you've got to go to the code. Once you do, you'll see that the reload method is defined several times in different modules that call each other, tacking on different behaviours. This is something that the documentation didn't make clear.</p>
+
+<p>If you want the whole story, go to the source.</p></blockquote>
+
+<h3>Testes são as melhores documentações</h3>
+
+<p>Como a comunidade Ruby ama testes, nada melhor do que olhar os testes para entender como usar determinado método ou até mesmo uma API.</p>
+
+<h3>O melhor motivo: você aprende coisas novas</h3>
+
+<p>Outras pessoas pensam de outra forma, têm outro estilo, outros approaches que nós não temos. Lendo o código dessas pessoas irá inspirar você a ter uma nova ideia.</p>
+
+<h2>E se tudo falhar?</h2>
+
+<p>Aí sim você vai atrás de ajuda online. Mas pelo menos você já tentou de tudo e realmente aprendeu muito com isso!</p>
+
+<h2>Créditos</h2>
+
+<p>Eu apenas traduzi e expliquei de uma forma diferente, todos os créditos vão para o <a href="http://jstorimer.com">Jesse Storimer</a> pelo grande artigo.</p>
+]]></content>
+  </entry>
+  
+</feed>
