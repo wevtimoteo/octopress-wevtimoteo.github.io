@@ -41,6 +41,8 @@ Exemplo:
 
 ``WWLength *aMeter = [WWLength lengthWithMeter:1];``
 
-Cada objeto retornado pelo seu método de factory pode pentencer a um tipo de instância da subclasse. Mas não se esqueça, neste caso a subclasse está oculta, você não a conhece, então nossa instância `aMeter` é do tipo `WWLength`.
+Cada objeto retornado pelo seu método de factory pode pertencer a um tipo de instância da subclasse. Mas não se esqueça, neste caso a subclasse está oculta, você não a conhece, então nossa instância `aMeter` é do tipo `WWLength`.
 
-Esse é o conceito do Class Cluster, que é utilizado intensamente no framework Foundation. Você pode obter mais informações de classes do Foundation que seguem esta abordagem e outros exemplos utilizando o próprio Foundation: [Cocoa Core Class Cluters](https://developer.apple.com/library/ios/documentation/general/conceptual/DevPedia-CocoaCore/ClassCluster.html)
+Esse é o conceito do Class Cluster, que é utilizado intensamente no framework Foundation.
+
+Dê uma olhada na documentação para obter mais informações de classes do Foundation que seguem esta abordagem: [Cocoa Core Class Cluters](https://developer.apple.com/library/ios/documentation/general/conceptual/DevPedia-CocoaCore/ClassCluster.html)
